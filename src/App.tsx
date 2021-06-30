@@ -1,8 +1,15 @@
+import { BrowserRouter, Route } from 'react-router-dom'
 
+import { Home } from './pages/Home'
+import { CreateRoom } from './pages/CreateRoom'
+import './styles/global.scss'
 
 function App() {
   return (
-    <h1>Hello world</h1>
+    <BrowserRouter>
+      <Route path='/' exact component={Home} />
+      <Route path='/rooms/create' component={CreateRoom} />
+    </BrowserRouter>
   );
 }
 
