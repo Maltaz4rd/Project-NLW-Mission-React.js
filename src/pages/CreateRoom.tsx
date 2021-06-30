@@ -4,8 +4,13 @@ import logo from '../assets/images/logo.svg'
 import '../styles/auth.scss'
 import { Button } from '../components/Button'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../hoohks/useAuth'
 
 export function CreateRoom() {
+
+    const { user } = useAuth()
+    console.log(user)
+
     return (
         <div id="pageAuth">
             <aside>
@@ -16,6 +21,7 @@ export function CreateRoom() {
             <main>
                 <div className='main-content'>
                     <img src={logo} alt="logo let me ask" />
+                    <h1>{user?.nome}</h1>
                     <h2>Crie uma nova sala</h2>
                     <form>
                         <input
